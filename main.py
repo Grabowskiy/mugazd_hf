@@ -129,12 +129,11 @@ b = y1 - a*x1
 def f(x, a, b):
     return a*x+b
 
-x_line = np.linspace(min(gdp_array), max(gdp_array), 33)
-y_line = f(x_line, a, b)
+y_line = f(np.array(gdp_array), a, b)
 print(f"Illesztett függvény: {a}*x+{b}")
 
 plt.scatter(gdp_array, np.array(diab_array))
-plt.plot(x_line, y_line, "red")
+plt.plot(gdp_array, y_line, "red")
 plt.xlabel('Egy főre jutó GDP [$]')
 plt.ylabel('Diabéteszesek előfordulása [%]')
 plt.savefig("kepek/fuggvenyillesztes.png", dpi=300, bbox_inches='tight')
